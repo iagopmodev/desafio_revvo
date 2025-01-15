@@ -28,4 +28,9 @@ class CursosModel {
         $stmt->bindParam(':PRECO', $dados['PRECO']);
         return $stmt->execute();
     }
+    public function deletarCurso($id) {
+        $stmt = $this->pdo->prepare('DELETE FROM CURSOS WHERE ID = :ID');
+        $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
