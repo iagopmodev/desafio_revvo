@@ -8,14 +8,15 @@ $dotenv->load();
 $dbHost = $_ENV['DB_HOST'];
 $dbPort = $_ENV['DB_PORT'];
 $dbDatabase = $_ENV['DB_DATABASE'];
-$dbUserName = $_ENV['DB_USERNAME'];
+$dbUsername = $_ENV['DB_USERNAME'];
 $dbPassword = $_ENV['DB_PASSWORD'];
 
 try {
-    $pdo = new PDO(dsn: "mysql:host=$dbHost;port=$dbPort;dbname=$dbUserName;password=$dbPassword");
-    $pdo->setAttribute(attribute: PDO::ATTR_ERRMODE, value: PDO::ERRMODE_EXCEPTION);    
+    $pdo = new PDO("mysql:host=$dbHost;port=$dbPort;dbname=$dbDatabase;user=$dbUsername;password=$dbPassword");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Conexão bem-sucedida!";
     return $pdo;
-} catch(PDOException $e) {
-    echo "Falha na conexão: " . $e->getMessage();
-    exit();    
+} catch (PDOException $e) {
+    echo "Erro de conexão: " . $e->getMessage();
+    exit();
 }
