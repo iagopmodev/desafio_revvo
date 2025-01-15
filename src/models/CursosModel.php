@@ -19,7 +19,8 @@ class CursosModel {
         }
     }
     public function editarCurso($id, $dados) {
-        $stmt = $this->pdo->prepare('UPDATE CURSOS SET NOME = :NOME, DESCRICAO, DURACAO, PRECO) VALUES (:NOME, :DESCRICAO, :DURACAO, :PRECO)');
+        // var_dump($dados['NOME']);
+        $stmt = $this->pdo->prepare('UPDATE CURSOS SET NOME = :NOME, DESCRICAO = :DESCRICAO, DURACAO = :DURACAO, PRECO = :PRECO WHERE ID = :ID');
         $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
         $stmt->bindParam(':NOME', $dados['NOME']);
         $stmt->bindParam(':DESCRICAO', $dados['DESCRICAO']);

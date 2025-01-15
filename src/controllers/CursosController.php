@@ -12,6 +12,13 @@ class CursosController {
         return $this->cursosModel->listarCursos($id);
     }
     public function editarCurso($id, $dados) {
+        // $dados = [
+        //     "ID" => 1,
+        //     "NOME" => "alterado",
+        //     "DESCRICAO" => "alterado INICIANTE",
+        //     "DURACAO" => 100,
+        //     "PRECO" => 1
+        // ];
         return $this->cursosModel->editarCurso($id, $dados);
     }
 }
