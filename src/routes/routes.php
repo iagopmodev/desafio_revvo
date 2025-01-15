@@ -35,5 +35,11 @@ if(preg_match('/^\/deletarCurso\/(\d+)$/', $path, $matches) && $method === 'DELE
     exit();
 }
 
+if($path === '/criarCurso') {
+    $dados = $_POST;
+    $resultado = $cursosController->criarCurso($dados);
+    echo json_encode(['message' => 'Curso criado com sucesso']);
+}
+
 http_response_code(404);
 echo json_encode(['message' => 'Rota não encontrada']);

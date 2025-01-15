@@ -33,4 +33,12 @@ class CursosModel {
         $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+    public function criarCurso($dados) {
+        $stmt = $this->pdo->prepare('INSERT INTO CURSOS (NOME, DESCRICAO, DURACAO, PRECO) VALUES (:NOME, :DESCRICAO, :DURACAO, :PRECO)');
+        $stmt->bindParam(':NOME', $dados['NOME']);
+        $stmt->bindParam(':DESCRICAO', $dados['DESCRICAO']);
+        $stmt->bindParam(':DURACAO', $dados['DURACAO']);
+        $stmt->bindParam(':PRECO', $dados['PRECO']);
+        $stmt->execute();
+    }
 }

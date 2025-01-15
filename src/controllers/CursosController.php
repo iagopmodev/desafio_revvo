@@ -17,4 +17,7 @@ class CursosController {
     public function deletarCurso($id) {
         return $this->cursosModel->deletarCurso($id);
     }
+    public function criarCurso($dados) {
+        return $this->cursosModel->criarCurso($dados);
+    }
 }
