@@ -11,7 +11,20 @@ class CursosModel {
             $stmt = $this->pdo->query('SELECT * FROM CURSOS');
             $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $cursos;
-            // var_dump($retorno);
+        } else {
+            $stmt = $this->pdo->prepare('SELECT * FROM CURSOS WHERE ID = :id');
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
+    }
+    public function editarCurso($id, $dados) {
+        $stmt = $this->pdo->prepare('UPDATE CURSOS SET NOME = :NOME, DESCRICAO, DURACAO, PRECO) VALUES (:NOME, :DESCRICAO, :DURACAO, :PRECO)');
+        $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':NOME', $dados['NOME']);
+        $stmt->bindParam(':DESCRICAO', $dados['DESCRICAO']);
+        $stmt->bindParam(':DURACAO', $dados['DURACAO']);
+        $stmt->bindParam(':PRECO', $dados['PRECO']);
+        return $stmt->execute();
     }
 }

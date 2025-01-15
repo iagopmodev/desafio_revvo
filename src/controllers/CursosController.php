@@ -11,4 +11,7 @@ class CursosController {
     public function exibirCursos($id = null) {
         return $this->cursosModel->listarCursos($id);
     }
+    public function editarCurso($id, $dados) {
+        return $this->cursosModel->editarCurso($id, $dados);
+    }
 }
