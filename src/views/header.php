@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Meu Projeto</title>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="public/css/styles.css"> <!-- CSS global -->
 </head>  
 <body>  
     <header class="btext-white p-4 text-center" style="background-color: #f8f9fa; color: black;">  
@@ -27,3 +27,4 @@
             </div>
         </nav>
     </header>
+    <?php include 'carousel.php'; ?>

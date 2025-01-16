@@ -2,12 +2,15 @@
 require 'vendor/autoload.php';
 require 'src/core/core.php';
 require 'src/controllers/CursosController.php';
+require_once 'src/core/core.php'; 
 $pdo = require 'Connection.php';
 
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable((__DIR__ . '/../../'));
 $dotenv->load();
+
+handleCors();
 
 $path = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];

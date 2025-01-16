@@ -1,8 +1,7 @@
-<footer class="bg-dark text-white text-center p-4 sticky-footer">  
-        <p>&copy; 2023 LEO - Todos os direitos reservados.</p>  
-    </footer>  
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
-    <script src="js/index.js"></script>  
-</body>  
-</html>
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+        </div>
+    </footer>
+</div>
